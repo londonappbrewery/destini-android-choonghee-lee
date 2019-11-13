@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        // TODO: Step 5 - Wire up the 3 views from the layout to the member variables:
-
+        story = findViewById(R.id.storyTextView);
+        top = findViewById(R.id.buttonTop);
+        bottom = findViewById(R.id.buttonBottom);
 
 
         // TODO: Steps 6, 7, & 9 - Set a listener on the top button:
