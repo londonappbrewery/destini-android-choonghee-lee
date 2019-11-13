@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    // TODO: Steps 4 & 8 - Declare member variables here:
     TextView story;
     Button top, bottom;
 
@@ -24,25 +23,28 @@ public class MainActivity extends AppCompatActivity {
         top = findViewById(R.id.buttonTop);
         bottom = findViewById(R.id.buttonBottom);
 
-
-        // TODO: Steps 6, 7, & 9 - Set a listener on the top button:
         top.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (storyIdx) {
+                    case 2:
                     case 1:
                         storyIdx = 3;
                         story.setText(R.string.T3_Story);
                         top.setText(R.string.T3_Ans1);
                         bottom.setText(R.string.T3_Ans2);
                         break;
+                    case 3:
+                        storyIdx = 6;
+                        story.setText(R.string.T6_End);
+                        top.setVisibility(View.INVISIBLE);
+                        bottom.setVisibility(View.INVISIBLE);
+                        break;
                 }
             }
         });
 
 
-
-        // TODO: Steps 6, 7, & 9 - Set a listener on the bottom button:
         bottom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +54,17 @@ public class MainActivity extends AppCompatActivity {
                         story.setText(R.string.T2_Story);
                         top.setText(R.string.T2_Ans1);
                         bottom.setText(R.string.T2_Ans2);
+                        break;
+                    case 2:
+                        story.setText(R.string.T4_End);
+                        top.setVisibility(View.INVISIBLE);
+                        bottom.setVisibility(View.INVISIBLE);
+                        break;
+                    case 3:
+                        storyIdx = 5;
+                        story.setText(R.string.T5_End);
+                        top.setVisibility(View.INVISIBLE);
+                        bottom.setVisibility(View.INVISIBLE);
                         break;
                 }
             }
