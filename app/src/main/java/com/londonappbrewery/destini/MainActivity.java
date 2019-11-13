@@ -12,6 +12,8 @@ public class MainActivity extends AppCompatActivity {
     TextView story;
     Button top, bottom;
 
+    int storyIdx = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,14 @@ public class MainActivity extends AppCompatActivity {
         top.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                switch (storyIdx) {
+                    case 1:
+                        storyIdx = 3;
+                        story.setText(R.string.T3_Story);
+                        top.setText(R.string.T3_Ans1);
+                        bottom.setText(R.string.T3_Ans2);
+                        break;
+                }
             }
         });
 
@@ -37,7 +46,14 @@ public class MainActivity extends AppCompatActivity {
         bottom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                switch (storyIdx) {
+                    case 1:
+                        storyIdx = 2;
+                        story.setText(R.string.T2_Story);
+                        top.setText(R.string.T2_Ans1);
+                        bottom.setText(R.string.T2_Ans2);
+                        break;
+                }
             }
         });
 
